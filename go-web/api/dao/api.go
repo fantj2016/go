@@ -5,8 +5,8 @@ import (
 	_"github.com/go-sql-driver/mysql"
 	"log"
 	"database/sql"
-	"defs"
-	"util"
+	"github.com/jiaofanting/go/go-web/api/defs"
+	"github.com/jiaofanting/go/go-web/api/util"
 )
 
 func AddUserCredential(loginName string, pwd string) error {
@@ -53,6 +53,7 @@ func DeleteUser(loginName string, password string) error {
 	defer stmtDel.Close()
 	return nil
 }
-func AddNewVide(aid int, name string) (*defspojo.VideoInfo, error) {
-	vid ,err := myUUID.new
+func AddNewVide(aid int, name string) (*defs.VideoInfo, error) {
+	//vid ,err := util.New
+
 }
