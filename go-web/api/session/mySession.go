@@ -5,6 +5,7 @@ import (
 	"github.com/jiaofanting/go/go-web/api/dao"
 	"sync"
 	"time"
+	"github.com/satori/go.uuid"
 )
 
 var sessionMap *sync.Map
@@ -23,7 +24,7 @@ func deleteExpiredSession(sid string) {
 }
 
 func LoadSessionsFromDB() {
-	r, err := dbops.RetrieveAllSessions()
+	r, err := dao.RetrieveAllSessions()
 	if err != nil {
 		return
 	}
@@ -36,7 +37,8 @@ func LoadSessionsFromDB() {
 }
 
 func GenerateNewSessionId(un string) string {
-	id, _ := utils.NewUUID()
+	uuid,_ := uuid.NewV4()
+	var id = uuid.String()
 	ct := nowInMilli()
 	ttl := ct + 30 * 60 * 1000// Severside session valid time: 30 min
 

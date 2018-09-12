@@ -22,3 +22,8 @@ type SimpleSession struct {
 	Username string //login name
 	TTL int64
 }
+//response
+type SignedUp struct {
+	Success bool `json:"success"`
+	SessionId string `json:"session_id"`
+}
