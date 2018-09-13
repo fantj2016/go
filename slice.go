@@ -34,8 +34,8 @@ func createSlice()  {
 	 /**
 	 取头值/取尾值
 	  */
-	  front := s[0]
-	  tail := s[len(s)-1]
-	  fmt.Println(front,tail)
+	  front := s[0];
+	  tail := s[len(s)-1];
+	  fmt.Println(front,tail);
 }
 
